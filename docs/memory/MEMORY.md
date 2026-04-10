@@ -1,0 +1,6 @@
+- [사용자 역할](user_role.md) - NEWKL, GrowAI 플랫폼, Korea Polytechnics, 병렬 에이전트 선호
+- [V2 버전으로만 서비스 실행](feedback_v2_only.md) - V1 사용 안 함, 항상 V2 디렉토리에서 실행
+- [em dash 사용 금지](feedback_no_em_dash.md) - 텍스트에 " — " 문자 사용 금지
+- [GrowAI All-in-One 통합 플랫폼](project_growai_all_in_one.md) - 9개 서비스 통합, /home/desktop/GrowAI-ALL-ONE
+- [LearnForm V2 현황](project_learnform_v2.md) - 랜딩 UI, 월계수 잎 로고, 브랜딩 결정
+- [GitHub 저장소 목록](reference_github_repos.md) - LearnForm, GrowAI-All-in-One 저장소 경로
