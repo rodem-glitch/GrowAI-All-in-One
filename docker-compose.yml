@@ -1,0 +1,52 @@
+# docker-compose.yml
+# GrowAI ALL-IN-ONE 로컬 개발 환경
+# GCP Cloud Run + AlloyDB + Memorystore 구성을 로컬에서 재현
+
+services:
+  # 프론트엔드 (Vite 개발 서버)
+  growai-frontend:
+    build: .
+    ports:
+      - "3001:8080"
+    volumes:
+      - ./src:/app/src  # 핫 리로드를 위한 소스 마운트
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - api
+
+  # 백엔드 API (FastAPI)
+  # Cloud Run 환경과 동일한 포트(8080) 사용
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+    env_file: ./api/.env.local
+    volumes:
+      - ./api:/app  # 코드 변경 시 자동 반영 (uvicorn --reload)
+    depends_on:
+      - postgres
+      - redis
+
+  # PostgreSQL (AlloyDB 로컬 대체)
+  # 프로덕션에서는 GCP AlloyDB(PostgreSQL 호환) 사용
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: growai
+      POSTGRES_USER: growai_admin
+      POSTGRES_PASSWORD: localdev123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # Redis (Memorystore 로컬 대체)
+  # 세션 관리, 캐싱, Celery 브로커 용도
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:

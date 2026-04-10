@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Noto Sans KR", "Inter", "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ── LearnForm 디자인 토큰 ── */
+:root {
+  --color-bg: #FFFBFC;
+  --color-bg-secondary: #FFF5F7;
+  --color-bg-tertiary: #FFF0F3;
+  --color-text: #172B4D;
+  --color-text-secondary: #44546F;
+  --color-text-muted: #6B3A50;
+  --color-brand: #C25B84;
+  --color-brand-hover: #A8456D;
+  --color-brand-light: #D4789C;
+  --color-border: #FCE7F3;
+  --color-border-hover: #FBCFE8;
+  --color-success: #059669;
+  --color-warning: #D97706;
+  --color-error: #DC2626;
+  --color-accent: #D4789C;
+}
+
+/* ── 다크모드 ── */
+.dark {
+  --color-bg: #0f1112;
+  --color-bg-secondary: #1a1d1e;
+  --color-bg-tertiary: #242728;
+  --color-text: #e4e7e8;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+  --color-brand: #D4789C;
+  --color-brand-hover: #E8A0BF;
+  --color-brand-light: #C25B84;
+  --color-border: #2d3032;
+  --color-border-hover: #3d4042;
+  --color-accent: #D4789C;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  @apply font-sans antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── 구조 유틸리티 ── */
+.container-page { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+.container-narrow { @apply max-w-4xl mx-auto px-4 sm:px-6; }
+.container-wide { @apply max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8; }
+
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
