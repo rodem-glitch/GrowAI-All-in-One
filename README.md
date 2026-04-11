@@ -2,6 +2,107 @@
 
 > **growai.co.kr** - 단일 도메인에서 9개 AI 서비스를 통합 운영하는 올인원 플랫폼
 
+## gstack Overview
+
+> Source: [https://github.com/garrytan/gstack](https://github.com/garrytan/gstack) | MIT License | v0.16.2
+> by Garry Tan, President & CEO of Y Combinator
+
+**gstack = Claude Code를 가상 엔지니어링 팀으로 변환하는 오픈소스 소프트웨어 팩토리**
+
+23개 전문가 역할 + 8개 파워 도구. 1인 개발자가 20인 팀의 성과를 달성.
+Garry Tan 본인이 60일간 600,000+ 줄의 프로덕션 코드를 출시한 방법론.
+
+### 대상
+
+| 대상 | 활용 |
+|------|------|
+| **Founders / CEOs** | 직접 코드를 출시하고 싶은 기술 창업자 |
+| **First-time Claude Code 사용자** | 빈 프롬프트 대신 구조화된 역할 제공 |
+| **Tech Leads / Staff Engineers** | 모든 PR에 리뷰, QA, 배포 자동화 |
+
+### Quick Start (30초)
+
+```bash
+# Step 1: 설치
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
+cd ~/.claude/skills/gstack && ./setup
+
+# Step 2: 팀 모드 (공유 저장소용, 권장)
+cd ~/.claude/skills/gstack && ./setup --team
+cd <your-repo>
+~/.claude/skills/gstack/bin/gstack-team-init required
+git add .claude/ CLAUDE.md && git commit -m "require gstack for AI-assisted work"
+```
+
+### Sprint Process
+
+```
+Think → Plan → Build → Review → Test → Ship → Reflect
+```
+
+### 전체 Skill 목록 (35개)
+
+| 단계 | Skill | 전문가 역할 | 설명 |
+|------|-------|-----------|------|
+| **Think** | `/office-hours` | YC Office Hours | 6가지 핵심 질문으로 제품 재정의 |
+| **Plan** | `/plan-ceo-review` | CEO / Founder | 4가지 스코프 모드로 전략 검토 |
+| **Plan** | `/plan-eng-review` | Eng Manager | 아키텍처, 데이터 흐름, 엣지 케이스, 테스트 |
+| **Plan** | `/plan-design-review` | Senior Designer | 디자인 0-10 평가, AI Slop 감지 |
+| **Plan** | `/plan-devex-review` | DX Lead | 개발자 경험 검토, TTHW 벤치마크 |
+| **Plan** | `/autoplan` | Review Pipeline | CEO > Design > Eng 자동 리뷰 파이프라인 |
+| **Build** | `/design-consultation` | Design Partner | 디자인 시스템 구축, 크리에이티브 리서치 |
+| **Build** | `/design-shotgun` | Design Explorer | 4-6개 AI 목업 변형 생성, 비교 보드 |
+| **Build** | `/design-html` | Design Engineer | 목업 > 프로덕션 HTML 변환, 30KB, zero deps |
+| **Review** | `/review` | Staff Engineer | 프로덕션 버그 탐지, 자동 수정 |
+| **Review** | `/design-review` | Designer Who Codes | 디자인 감사 + 수정, atomic commits |
+| **Review** | `/devex-review` | DX Tester | 실제 온보딩 테스트, TTHW 측정 |
+| **Review** | `/codex` | Second Opinion | OpenAI Codex CLI 독립 코드 리뷰 |
+| **Test** | `/qa` | QA Lead | 실제 브라우저 테스트, 버그 수정, 회귀 테스트 |
+| **Test** | `/qa-only` | QA Reporter | 테스트만, 코드 변경 없음 |
+| **Test** | `/cso` | Security Officer | OWASP Top 10 + STRIDE 보안 감사 |
+| **Test** | `/benchmark` | Performance Engineer | Core Web Vitals, 리소스 사이즈 측정 |
+| **Ship** | `/ship` | Release Engineer | PR 생성 + 테스트 + 커버리지 감사 |
+| **Ship** | `/land-and-deploy` | Release Engineer | PR 머지 > CI > 프로덕션 배포 검증 |
+| **Ship** | `/canary` | SRE | 배포 후 모니터링 루프 |
+| **Ship** | `/document-release` | Technical Writer | 프로젝트 문서 자동 업데이트 |
+| **Reflect** | `/retro` | Eng Manager | 주간 회고, 팀 성과, 성장 기회 분석 |
+| **Browse** | `/browse` | QA Engineer | 실제 Chromium 브라우저, 스크린샷 |
+| **Browse** | `/open-gstack-browser` | Browser | GStack Browser 실행 (anti-bot stealth) |
+| **Browse** | `/pair-agent` | Multi-Agent | 멀티 AI 에이전트 브라우저 공유 |
+| **Browse** | `/setup-browser-cookies` | Session Manager | 실제 브라우저 쿠키 임포트 |
+| **Safety** | `/careful` | Safety | 파괴적 명령어 경고 |
+| **Safety** | `/freeze` | Edit Lock | 편집 범위 잠금 |
+| **Safety** | `/guard` | Full Safety | careful + freeze 동시 |
+| **Safety** | `/unfreeze` | Unlock | freeze 해제 |
+| **Infra** | `/investigate` | Debugger | 체계적 근본 원인 디버깅 |
+| **Infra** | `/setup-deploy` | Deploy Config | 배포 환경 1회 설정 |
+| **Infra** | `/gstack-upgrade` | Self-Updater | gstack 자체 업그레이드 |
+| **Infra** | `/learn` | Memory | 세션 간 학습 기억 관리 |
+
+### OpenClaw 연동
+
+| 사용자 요청 | 실행 |
+|------------|------|
+| "Fix the typo in README" | Claude Code 세션 (gstack 불필요) |
+| "Run a security audit" | Claude Code + `/cso` |
+| "Build me a notifications feature" | `/autoplan` > 구현 > `/ship` |
+| "Help me plan the v2 API redesign" | `/office-hours` > `/autoplan` (계획만) |
+
+### OpenClaw Native Skills (ClawHub)
+
+```bash
+clawhub install gstack-openclaw-office-hours gstack-openclaw-ceo-review gstack-openclaw-investigate gstack-openclaw-retro
+```
+
+| Skill | 설명 |
+|-------|------|
+| `gstack-openclaw-office-hours` | 6가지 핵심 질문으로 제품 심문 |
+| `gstack-openclaw-ceo-review` | 4가지 스코프 모드로 전략 도전 |
+| `gstack-openclaw-investigate` | 근본 원인 디버깅 방법론 |
+| `gstack-openclaw-retro` | 주간 엔지니어링 회고 |
+
+---
+
 ## 아키텍처
 
 ```
