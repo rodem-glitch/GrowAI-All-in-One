@@ -29,6 +29,14 @@ F(Feeling) → K(Knowing) → D(Doing) → S(Sharing) Cycle
 - Line limit: 100 characters
 - Korean comments for complex logic
 
+## gstack
+Use /browse from gstack for all web browsing. Never use mcp__claude-in-chrome__* tools.
+Available skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review,
+/design-consultation, /design-shotgun, /design-html, /review, /ship, /land-and-deploy,
+/canary, /benchmark, /browse, /open-gstack-browser, /qa, /qa-only, /design-review,
+/setup-browser-cookies, /setup-deploy, /retro, /investigate, /document-release, /codex,
+/cso, /autoplan, /pair-agent, /careful, /freeze, /guard, /unfreeze, /gstack-upgrade, /learn.
+
 ## gstack 개발 방법론
 Source: https://github.com/garrytan/gstack (MIT License)
 Version: v0.16.2 | by Garry Tan, Y Combinator CEO
