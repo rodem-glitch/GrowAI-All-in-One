@@ -883,9 +883,18 @@ ROI: 1년차 기준 투자 대비 5배 이상 회수 예상
 | Docker 문서 | https://docs.docker.com |
 | Terraform GCP | https://registry.terraform.io/providers/hashicorp/google |
 
+### 개발 도구
+
+| 자료 | URL |
+|------|-----|
+| gstack (by Garry Tan, Y Combinator CEO) | https://github.com/garrytan/gstack |
+
 ---
 
 ## Appendix C: gstack 명령어 전체 목록
+
+> **gstack** by Garry Tan, Y Combinator CEO
+> Source: https://github.com/garrytan/gstack
 
 ### 프로젝트 관리
 
@@ -956,7 +965,7 @@ ROI: 1년차 기준 투자 대비 5배 이상 회수 예상
 
 ### Q1. gstack을 꼭 사용해야 하나요?
 
-**A.** gstack은 NEWKL의 표준 개발 워크플로우 도구입니다. 10~15개의 병렬 스프린트를 효율적으로 관리하기 위해 설계되었으며, 모든 팀원이 통일된 워크플로우를 따르기 위해 사용을 권장합니다. 기존 Git 워크플로우와 완전히 호환됩니다.
+**A.** gstack(by Garry Tan, Y Combinator CEO — https://github.com/garrytan/gstack)은 NEWKL의 표준 개발 워크플로우 도구입니다. 10~15개의 병렬 스프린트를 효율적으로 관리하기 위해 설계되었으며, 모든 팀원이 통일된 워크플로우를 따르기 위해 사용을 권장합니다. 기존 Git 워크플로우와 완전히 호환됩니다.
 
 ### Q2. AI 에이전트가 생성한 코드를 그대로 사용해도 안전한가요?
 
