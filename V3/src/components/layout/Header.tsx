@@ -7,9 +7,10 @@ import Link from "next/link";
 import {
   BookOpen, LayoutDashboard, Factory, Video, FileVideo,
   MessageCircle, Code2, Globe, HardHat,
-  Sparkles, Route, Brain, Captions, FileSearch,
+  Sparkles, Route, Captions, FileSearch,
   Bot, Terminal, Gauge, ShieldCheck,
 } from "lucide-react";
+import ClaudeIcon from "@/components/icons/ClaudeIcon";
 
 type DropdownKey = "features" | "solutions" | "resources" | null;
 
@@ -22,7 +23,7 @@ const ACCENT_SWATCHES: Record<AccentColor, string> = {
 const FEATURES_ITEMS = [
   { icon: Sparkles, label: "AI 콘텐츠 자동 생성", desc: "멀티 AI로 교수설계부터 콘텐츠까지", href: "/learnform" },
   { icon: Route, label: "AI 학습 경로 설계", desc: "학습자별 맞춤 커리큘럼 자동 생성", href: "/lms" },
-  { icon: Brain, label: "AI 품질 예측", desc: "실시간 불량 감지 및 공정 최적화", href: "/map" },
+  { icon: ClaudeIcon, label: "AI 품질 예측", desc: "실시간 불량 감지 및 공정 최적화", href: "/map" },
   { icon: Captions, label: "AI 실시간 자막", desc: "다국어 자동 자막 및 번역", href: "/vls" },
   { icon: FileSearch, label: "AI 영상 요약", desc: "핵심 내용 자동 추출 및 챕터 분할", href: "/vas" },
   { icon: Bot, label: "AI 다국어 챗봇", desc: "20개 언어 24/7 고객 자동 응답", href: "/ccb" },
@@ -60,10 +61,10 @@ const SOLUTIONS_GROUPS = [
 ];
 
 const RESOURCES_ITEMS = [
-  { label: "도움말", desc: "사용 가이드 및 튜토리얼", href: "#help" },
-  { label: "커뮤니티", desc: "사용자 포럼 및 토론", href: "#community" },
-  { label: "블로그", desc: "최신 소식 및 활용 팁", href: "#blog" },
-  { label: "API 문서", desc: "개발자 레퍼런스", href: "#api-docs" },
+  { label: "도움말", desc: "사용 가이드 및 튜토리얼", href: "/help-center" },
+  { label: "커뮤니티", desc: "사용자 포럼 및 토론", href: "/community" },
+  { label: "블로그", desc: "최신 소식 및 활용 팁", href: "/blog" },
+  { label: "API 문서", desc: "개발자 레퍼런스", href: "/api-docs" },
 ];
 
 /* ── SVG helpers ── */
@@ -132,7 +133,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95">
-      <div ref={navRef} className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4 sm:px-6">
+      <div ref={navRef} className="mx-auto flex h-16 max-w-[1200px] items-center px-4 sm:px-6">
 
         {/* ── Logo ── */}
         <Link href="/" className="flex shrink-0 items-center gap-2 text-xl font-bold" style={{ color: colors.primary }}>
@@ -151,7 +152,7 @@ export default function Header() {
         </Link>
 
         {/* ── Desktop Nav ── */}
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+        <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex" aria-label="Main navigation">
 
           {/* 기능 — 9개 AI 대표 기능 메가메뉴 */}
           <div className="relative" onMouseEnter={() => handleEnter("features")} onMouseLeave={handleLeave}>
@@ -246,10 +247,10 @@ export default function Header() {
             {activeDropdown === "resources" && (
               <div className="absolute top-full right-0 mt-1 w-[280px] rounded-xl border border-gray-200 bg-white p-2 shadow-xl dark:border-gray-700 dark:bg-gray-900">
                 {RESOURCES_ITEMS.map((item) => (
-                  <a key={item.href} href={item.href} className="flex flex-col rounded-lg px-4 py-3 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <Link key={item.href} href={item.href} className="flex flex-col rounded-lg px-4 py-3 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800">
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-100">{item.label}</span>
                     <span className="text-xs text-gray-500 dark:text-gray-400">{item.desc}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
@@ -257,7 +258,7 @@ export default function Header() {
         </nav>
 
         {/* ── Desktop Right Actions ── */}
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden shrink-0 items-center gap-2 lg:flex">
           <button type="button" onClick={cycleLocale} className={`${controlBtnCls} w-auto px-2 text-xs font-semibold tracking-wide`} aria-label="Toggle language">
             {locale.toUpperCase()}
           </button>
@@ -350,11 +351,11 @@ export default function Header() {
             {mobileExpanded === "resources" && (
               <div className="mb-2 ml-3 space-y-1 border-l-2 pl-4" style={{ borderColor: `${colors.primary}33` }}>
                 {RESOURCES_ITEMS.map((item) => (
-                  <a key={item.href} href={item.href} className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800"
+                  <Link key={item.href} href={item.href} className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800"
                     onClick={() => setMobileOpen(false)}>
                     <div className="font-medium">{item.label}</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">{item.desc}</div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
