@@ -1,6 +1,8 @@
 "use client";
 import SolutionPage from "@/components/solutions/SolutionPage";
-import { Factory, Brain, Gauge, AlertTriangle, Cpu, BarChart3 } from "lucide-react";
+import { Factory, Gauge, AlertTriangle, Cpu, BarChart3 } from "lucide-react";
+import ClaudeIcon from "@/components/icons/ClaudeIcon";
+import { MAP_SCENES } from "@/data/scripts/video-scenes";
 
 export default function MapContent() {
   return (
@@ -10,10 +12,12 @@ export default function MapContent() {
       tagline="생산 공정의 지능화와 품질 최적화"
       subtitle={"실시간 센서 데이터 분석부터 불량 예측까지\nAI가 스마트 팩토리를 완성합니다."}
       icon={Factory}
+      scenes={MAP_SCENES}
+      videoSrc="/videos/map.mp4"
       videoTitle="MAP 데모 영상"
       videoDesc="AI가 제조 공정을 혁신하는 과정을 확인하세요"
       features={[
-        { icon: Brain, title: "AI 품질 예측", desc: "실시간 센서 데이터를 분석하여 불량 발생을 사전에 예측하고 경고합니다." },
+        { icon: ClaudeIcon, title: "AI 품질 예측", desc: "실시간 센서 데이터를 분석하여 불량 발생을 사전에 예측하고 경고합니다." },
         { icon: Gauge, title: "공정 최적화", desc: "AI가 생산 파라미터를 실시간으로 조정하여 수율을 극대화합니다." },
         { icon: AlertTriangle, title: "예지보전", desc: "설비 이상 징후를 조기에 감지하여 가동 중단을 최소화합니다." },
         { icon: Cpu, title: "디지털 트윈", desc: "가상 환경에서 공정을 시뮬레이션하여 최적 조건을 도출합니다." },
@@ -21,9 +25,9 @@ export default function MapContent() {
         { icon: Factory, title: "다공장 통합 관리", desc: "여러 공장의 데이터를 하나의 플랫폼에서 통합 관리합니다." },
       ]}
       screenshots={[
-        { title: "실시간 대시보드", desc: "공장 전체 현황을 실시간으로 모니터링합니다.", gradient: "from-emerald-100 to-teal-50" },
-        { title: "불량 예측 화면", desc: "AI가 예측한 불량 위험을 시각화합니다.", gradient: "from-red-100 to-orange-50" },
-        { title: "공정 분석 리포트", desc: "수율, OEE 등 핵심 지표를 분석합니다.", gradient: "from-blue-100 to-cyan-50" },
+        { title: "실시간 대시보드", desc: "공장 전체 현황을 실시간으로 모니터링합니다.", mockup: "dashboard" },
+        { title: "불량 예측 화면", desc: "AI가 예측한 불량 위험을 시각화합니다.", mockup: "safety" },
+        { title: "공정 분석 리포트", desc: "수율, OEE 등 핵심 지표를 분석합니다.", mockup: "analytics" },
       ]}
       aiFeatures={[
         { title: "실시간 불량 감지", desc: "센서 데이터를 밀리초 단위로 분석하여 불량 징후를 즉시 감지합니다." },

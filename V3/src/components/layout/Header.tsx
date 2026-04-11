@@ -46,7 +46,7 @@ const SOLUTIONS_GROUPS = [
     title: "산업 · Industry",
     items: [
       { icon: Factory, code: "MAP", label: "Manufacturing AI Platform", href: "/map" },
-      { icon: HardHat, code: "CMS", label: "Construction Management", href: "/cms" },
+      { icon: HardHat, code: "CMS", label: "Construction Management System", href: "/cms" },
       { icon: Globe, code: "CDN", label: "Content Delivery Network", href: "/cdn" },
     ],
   },
@@ -144,17 +144,18 @@ export default function Header() {
                 <stop offset="100%" stopColor={colors.primary} />
               </linearGradient>
             </defs>
-            <rect width="34" height="34" rx="8" fill="url(#logoBg)" />
-            <path d="M30 2Q23 9 13 19Q5 27 3 33Q16 25 25 14Q31 7 30 2Z" fill="white" fillOpacity="0.85" />
-            <path d="M30 2Q17 17 3 33" stroke="white" strokeWidth="0.9" strokeOpacity="0.4" strokeLinecap="round" fill="none" />
+            <rect width="34" height="34" rx="10" fill="url(#logoBg)" />
+            <text x="17" y="25" textAnchor="middle" fill="white" fontSize="24" fontFamily="'Times New Roman', Georgia, serif" fontWeight="400">&#937;</text>
           </svg>
-          GrowAI
+          <span className="tracking-tight" style={{ fontFamily: "'Inter', system-ui, sans-serif", fontWeight: 700, letterSpacing: "-0.02em" }}>
+            GrowAI
+          </span>
         </Link>
 
         {/* ── Desktop Nav ── */}
         <nav className="hidden flex-1 items-center justify-center gap-1 lg:flex" aria-label="Main navigation">
 
-          {/* 기능 — 9개 AI 대표 기능 메가메뉴 */}
+          {/* 기능 - 9개 AI 대표 기능 메가메뉴 */}
           <div className="relative" onMouseEnter={() => handleEnter("features")} onMouseLeave={handleLeave}>
             <button className={navBtnCls} aria-haspopup="true" aria-expanded={activeDropdown === "features"}>
               {t.nav.features}
@@ -192,7 +193,7 @@ export default function Header() {
             )}
           </div>
 
-          {/* 솔루션 — 9개 AI 솔루션 메가메뉴 (3열) */}
+          {/* 솔루션 - 9개 AI 솔루션 메가메뉴 (3열) */}
           <div className="relative" onMouseEnter={() => handleEnter("solutions")} onMouseLeave={handleLeave}>
             <button className={navBtnCls} aria-haspopup="true" aria-expanded={activeDropdown === "solutions"}>
               {t.nav.solutions}

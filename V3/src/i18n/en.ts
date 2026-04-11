@@ -81,7 +81,7 @@ const en = {
     title: "Create videos in 3 simple steps",
     subtitle: "From idea to published video in minutes, not hours",
     steps: [
-      { title: "Upload or Record", desc: "Import your video, audio, or screen recording — or start from scratch with AI." },
+      { title: "Upload or Record", desc: "Import your video, audio, or screen recording - or start from scratch with AI." },
       { title: "Edit with AI", desc: "Use text-based editing, auto subtitles, and AI voice to perfect your content." },
       { title: "Export & Share", desc: "Export in up to 4K quality and share directly to YouTube, TikTok, and more." },
     ],

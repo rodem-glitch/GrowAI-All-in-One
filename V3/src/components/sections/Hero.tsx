@@ -12,14 +12,14 @@ export default function Hero() {
     <section className="w-full text-center pt-32 pb-20 px-4 dark:bg-[#0f1112]">
       <div className="max-w-5xl mx-auto">
         {/* Main Heading */}
-        <h1 className="text-6xl md:text-7xl lg:text-[88px] font-bold text-[#242727] dark:text-white leading-tight">
+        <h1 className="text-6xl md:text-7xl lg:text-[88px] font-bold text-gray-900 dark:text-white leading-tight">
           {t.hero.title1}
           <br />
           {t.hero.title2}
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg md:text-xl text-[#555c5d] dark:text-gray-400 mt-6 max-w-2xl mx-auto whitespace-pre-line">
+        <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mt-6 max-w-2xl mx-auto whitespace-pre-line">
           {t.hero.subtitle}
         </p>
 
@@ -64,7 +64,7 @@ export default function Hero() {
         </div>
 
         {/* Trust Line */}
-        <p className="text-sm text-[#555c5d] dark:text-gray-500 mt-4">
+        <p className="text-sm text-gray-500 dark:text-gray-500 mt-4">
           {t.hero.noCreditCard}
         </p>
 

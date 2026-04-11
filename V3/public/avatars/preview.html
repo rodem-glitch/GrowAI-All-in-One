@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Avatar Style Preview</title>
+<style>
+  body { font-family: system-ui; background: #f8f8f8; padding: 40px; }
+  h1 { text-align: center; color: #242727; }
+  .grid { display: grid; grid-template-columns: 120px repeat(4, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; align-items: center; }
+  .style-name { font-weight: 700; font-size: 14px; color: #555; text-align: right; padding-right: 12px; }
+  .member { text-align: center; font-weight: 600; font-size: 13px; color: #14a1c8; margin-bottom: 4px; }
+  .card { background: white; border-radius: 16px; padding: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .card img { width: 100px; height: 100px; border-radius: 50%; background: #f0f0f0; }
+  .num { display: inline-block; background: #14a1c8; color: white; border-radius: 50%; width: 24px; height: 24px; line-height: 24px; font-size: 12px; font-weight: 700; margin-right: 6px; }
+</style>
+</head>
+<body>
+<h1>6 Avatar Styles Preview</h1>
+<p style="text-align:center;color:#888;margin-bottom:32px;">Pick your favorite style number</p>
+
+<div class="grid">
+  <div></div>
+  <div class="member">Ention<br><small>CEO</small></div>
+  <div class="member">Elliot<br><small>Business Leader</small></div>
+  <div class="member">Rodem<br><small>Creator</small></div>
+  <div class="member">Scarlet<br><small>Creator</small></div>
+</div>
+
+<script>
+const styles = [
+  { id: "notionists", name: "Notionists", desc: "미니멀 라인" },
+  { id: "adventurer", name: "Adventurer", desc: "부드러운 일러스트" },
+  { id: "lorelei", name: "Lorelei", desc: "세련된 플랫" },
+  { id: "micah", name: "Micah", desc: "따뜻한 일러스트" },
+  { id: "personas", name: "Personas", desc: "비즈니스 실루엣" },
+  { id: "big-smile", name: "Big Smile", desc: "활짝 웃는 얼굴" },
+];
+const members = ["ention", "elliot", "rodem", "scarlet"];
+const grid = document.querySelector(".grid");
+
+styles.forEach((s, i) => {
+  const label = document.createElement("div");
+  label.className = "style-name";
+  label.innerHTML = `<span class="num">${i+1}</span>${s.name}<br><small style="color:#999">${s.desc}</small>`;
+  grid.appendChild(label);
+
+  members.forEach(m => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `<img src="${s.id}_${m}.png" alt="${s.id} ${m}">`;
+    grid.appendChild(card);
+  });
+});
+</script>
+</body>
+</html>

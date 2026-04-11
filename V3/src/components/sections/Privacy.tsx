@@ -71,10 +71,10 @@ export default function Privacy() {
   return (
     <section className="py-24 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           {t.privacy.title}
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4">
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4">
           {t.privacy.subtitle}
         </p>
 
@@ -86,10 +86,10 @@ export default function Privacy() {
               >
                 {icons[i]}
               </div>
-              <h3 className="text-xl font-semibold text-[#242727] dark:text-white mt-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-6">
                 {item.title}
               </h3>
-              <p className="text-[#555c5d] dark:text-gray-400 mt-3 max-w-xs mx-auto">
+              <p className="text-gray-500 dark:text-gray-400 mt-3 max-w-xs mx-auto">
                 {item.desc}
               </p>
             </div>

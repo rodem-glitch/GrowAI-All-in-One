@@ -2,11 +2,12 @@
 
 import { useTheme } from "@/contexts/ThemeContext";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles, Brain, Clapperboard, Zap, Shield, Globe } from "lucide-react";
+import { Sparkles, Clapperboard, Zap, Shield, Globe } from "lucide-react";
+import ClaudeIcon from "@/components/icons/ClaudeIcon";
 
 const aiModels = [
   { name: "Gemini 2.5 Pro", role: "Content Intelligence", desc: "멀티모달 콘텐츠 분석 및 생성", icon: Sparkles },
-  { name: "Claude Opus", role: "Reasoning Engine", desc: "심층 추론 및 코드 생성", icon: Brain },
+  { name: "Claude Opus", role: "Reasoning Engine", desc: "심층 추론 및 코드 생성", icon: ClaudeIcon },
   { name: "Veo 3.1", role: "Video Generation", desc: "차세대 AI 영상 생성 엔진", icon: Clapperboard },
 ];
 
@@ -25,18 +26,18 @@ export default function PortalAIEngine() {
         <p className="text-sm uppercase tracking-widest font-semibold text-center mb-2" style={{ color: colors.primary }}>
           AI Engine
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white whitespace-pre-line">
-          {"세 개의 AI가 하나로 만날 때,\n불가능이 가능이 됩니다."}
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
+          상상이 영상이 되는 데, 3초.
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4 whitespace-pre-line">
-          {"Gemini · Claude · Veo — 세계 최고 수준의 AI 모델 3종을\n하나의 플랫폼에서 통합 운영합니다."}
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4 whitespace-pre-line">
+          {"Gemini가 읽고, Claude가 쓰고, Veo가 그립니다.\n세계가 따로 만든 최고를, 우리는 하나로 엮었습니다.\n이것이 GrowAI만의 초격차입니다."}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {aiModels.map((model) => {
             const Icon = model.icon;
             return (
-              <Card key={model.name} className="rounded-2xl border-[#d7dadb] dark:border-gray-700 hover:shadow-lg transition-shadow p-0">
+              <Card key={model.name} className="rounded-2xl border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow p-0">
                 <CardContent className="p-8 text-center">
                   <div
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
@@ -44,9 +45,9 @@ export default function PortalAIEngine() {
                   >
                     <Icon className="w-8 h-8" style={{ color: colors.primary }} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl font-bold text-[#242727] dark:text-white">{model.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{model.name}</h3>
                   <p className="text-sm font-medium mt-1 mb-3" style={{ color: colors.primary }}>{model.role}</p>
-                  <p className="text-sm text-[#555c5d] dark:text-gray-400">{model.desc}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{model.desc}</p>
                 </CardContent>
               </Card>
             );
@@ -66,10 +67,10 @@ export default function PortalAIEngine() {
             const Icon = cap.icon;
             return (
               <div key={cap.label} className="flex items-center gap-3">
-                <Icon className="w-5 h-5 text-[#555c5d] dark:text-gray-500" strokeWidth={1.5} />
+                <Icon className="w-5 h-5 text-gray-500 dark:text-gray-500" strokeWidth={1.5} />
                 <div>
-                  <div className="text-sm font-medium text-[#242727] dark:text-white">{cap.label}</div>
-                  <div className="text-xs text-[#555c5d] dark:text-gray-400">{cap.desc}</div>
+                  <div className="text-sm font-medium text-gray-900 dark:text-white">{cap.label}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">{cap.desc}</div>
                 </div>
               </div>
             );

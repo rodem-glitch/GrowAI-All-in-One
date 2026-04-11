@@ -19,16 +19,16 @@ export default function PortalTestimonials() {
         <p className="text-sm uppercase tracking-widest font-semibold text-center mb-2" style={{ color: colors.primary }}>
           Testimonials
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           Trusted by Industry Leaders
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4">
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4">
           대학, 기업, 공공기관의 리더들이 GrowAI를 신뢰합니다
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {testimonials.map((item) => (
-            <Card key={item.name} className="rounded-2xl border-[#d7dadb] dark:border-gray-700 p-0">
+            <Card key={item.name} className="rounded-2xl border-gray-200 dark:border-gray-800 p-0">
               <CardContent className="p-8">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -43,8 +43,8 @@ export default function PortalTestimonials() {
                     <span className="font-semibold text-sm" style={{ color: colors.primary }}>{item.avatar}</span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#242727] dark:text-white">{item.name}</p>
-                    <p className="text-xs text-[#555c5d] dark:text-gray-400">{item.role}</p>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white">{item.name}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{item.role}</p>
                   </div>
                 </div>
               </CardContent>

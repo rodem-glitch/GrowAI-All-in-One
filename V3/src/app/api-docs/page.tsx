@@ -5,9 +5,9 @@ import ApiDocsContent from "./content";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "API 문서 — API Docs | GrowAI",
+  title: "API 문서 - API Docs | GrowAI",
   description:
-    "GrowAI API 문서 — 개발자 레퍼런스, SDK, 연동 가이드",
+    "GrowAI API 문서 - 개발자 레퍼런스, SDK, 연동 가이드",
 };
 
 export default function ApiDocsPage() {

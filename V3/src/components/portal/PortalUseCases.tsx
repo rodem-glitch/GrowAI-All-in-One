@@ -20,10 +20,10 @@ export default function PortalUseCases() {
         <p className="text-sm uppercase tracking-widest font-semibold text-center mb-2" style={{ color: colors.primary }}>
           Use Cases
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           Industry Solutions
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4 whitespace-pre-line">
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4 whitespace-pre-line">
           {"산업마다 현장이 다르기에, AI도 달라야 합니다.\n교육 · 제조 · 건설 · 헬스케어 각 분야에 최적화된 솔루션"}
         </p>
 
@@ -31,7 +31,7 @@ export default function PortalUseCases() {
           {useCases.map((uc) => {
             const Icon = uc.icon;
             return (
-              <Card key={uc.industry} className="rounded-2xl border-[#d7dadb] dark:border-gray-700 hover:shadow-xl transition-shadow p-0">
+              <Card key={uc.industry} className="rounded-2xl border-gray-200 dark:border-gray-800 hover:shadow-xl transition-shadow p-0">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-5">
                     <div
@@ -42,10 +42,10 @@ export default function PortalUseCases() {
                     </div>
                     <div className="flex-1">
                       <span className="text-xs font-semibold tracking-wider uppercase" style={{ color: colors.primary }}>{uc.industry}</span>
-                      <h3 className="text-xl font-bold text-[#242727] dark:text-white mt-1 mb-4">{uc.title}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-1 mb-4">{uc.title}</h3>
                       <ul className="space-y-2">
                         {uc.items.map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-sm text-[#555c5d] dark:text-gray-400">
+                          <li key={item} className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
                             <svg className="w-4 h-4 shrink-0" style={{ color: colors.primary }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>

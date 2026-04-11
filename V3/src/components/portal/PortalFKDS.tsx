@@ -20,10 +20,10 @@ export default function PortalFKDS() {
         <p className="text-sm uppercase tracking-widest font-semibold text-center mb-2" style={{ color: colors.primary }}>
           Learning Model
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           FKDS Cycle
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4 whitespace-pre-line">
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4 whitespace-pre-line">
           {"느끼고 알고 실천하고 나누는 네 단계가 끊임없이 순환할 때\n학습은 경험을 넘어 성장이 됩니다."}
         </p>
 
@@ -31,7 +31,7 @@ export default function PortalFKDS() {
           {phases.map((phase) => {
             const Icon = phase.icon;
             return (
-              <Card key={phase.letter} className="rounded-2xl border-[#d7dadb] dark:border-gray-700 hover:shadow-lg transition-shadow p-0">
+              <Card key={phase.letter} className="rounded-2xl border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow p-0">
                 <CardContent className="p-8 text-center">
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
@@ -40,18 +40,14 @@ export default function PortalFKDS() {
                     <Icon className="w-10 h-10" style={{ color: colors.primary }} strokeWidth={1.5} />
                   </div>
                   <span className="text-4xl font-extrabold" style={{ color: colors.primary }}>{phase.letter}</span>
-                  <h3 className="text-xl font-bold text-[#242727] dark:text-white mt-2">{phase.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-2">{phase.name}</h3>
                   <p className="text-sm font-medium mb-3" style={{ color: colors.primary }}>{phase.nameKo}</p>
-                  <p className="text-sm text-[#555c5d] dark:text-gray-400 leading-relaxed whitespace-pre-line">{phase.desc}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed whitespace-pre-line">{phase.desc}</p>
                 </CardContent>
               </Card>
             );
           })}
         </div>
-
-        <p className="text-sm text-[#555c5d] dark:text-gray-400 text-center mt-10 whitespace-pre-line">
-          {"느끼고 알고 해보고 나누는 순환이 멈추지 않을 때\n배움은 성장이 됩니다."}
-        </p>
       </div>
     </section>
   );

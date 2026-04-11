@@ -22,7 +22,7 @@ const services = [
   { code: "CCB", name: "Customer Care Bot", desc: "다국어 AI 챗봇으로 글로벌 고객 소통 혁신", detail: "20개 이상 언어를 지원하는 AI 챗봇이 24/7 고객 문의에 즉시 응답합니다. 자연어 이해 기반 맥락 파악, 감정 분석, 자동 에스컬레이션으로 고객 만족도를 높입니다.", path: "/ccb", icon: MessageCircle },
   { code: "CCS", name: "Claude Code Skill", desc: "AI 코드 어시스턴트로 개발 생산성의 도약", detail: "Claude 기반 코드 생성, 리뷰, 디버깅, 리팩토링을 지원합니다. 35개 이상의 전문가 슬래시 명령으로 설계부터 배포까지 개발 전 과정을 가속화합니다.", path: "/ccs", icon: Code2 },
   { code: "CDN", name: "Content Delivery Network", desc: "글로벌 엣지 캐싱으로 끊김 없는 미디어 경험", detail: "42개국 엣지 서버를 통한 초저지연 콘텐츠 전송, 적응형 비트레이트 스트리밍, DRM 보안, 실시간 트래픽 분석 대시보드를 제공합니다.", path: "/cdn", icon: Globe },
-  { code: "CMS", name: "Construction Management", desc: "IoT + AI 기반 건설 현장 관리의 스마트화", detail: "IoT 센서 실시간 모니터링, AI 안전 사고 예측, BIM 데이터 통합, 공정률 자동 산출로 건설 현장의 디지털 전환을 실현합니다.", path: "/cms", icon: HardHat },
+  { code: "CMS", name: "Construction Management System", desc: "IoT + AI 기반 건설 현장 관리의 스마트화", detail: "IoT 센서 실시간 모니터링, AI 안전 사고 예측, BIM 데이터 통합, 공정률 자동 산출로 건설 현장의 디지털 전환을 실현합니다.", path: "/cms", icon: HardHat },
 ];
 
 export default function PortalServices() {
@@ -34,11 +34,11 @@ export default function PortalServices() {
         <p className="text-sm uppercase tracking-widest font-semibold text-center mb-2" style={{ color: colors.primary }}>
           9 Integrated Solutions
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
-          One Platform, Every Solution
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
+          아홉 개의 답, 하나의 플랫폼.
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4 whitespace-pre-line">
-          {"교육 · 제조 · 영상 · 고객 서비스를 아우르는 AI 통합 솔루션.\n하나의 플랫폼에서 모두 해결합니다."}
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4 whitespace-pre-line">
+          {"교육이 바뀌고, 제조가 바뀌고, 영상이 바뀝니다.\n흩어져 있던 솔루션을, 우리는 하나로 모았습니다.\n이제 플랫폼을 옮길 필요가 없습니다."}
         </p>
 
         <Accordion className="mt-12">
@@ -47,7 +47,7 @@ export default function PortalServices() {
             return (
               <AccordionItem
                 key={svc.code}
-                className="border border-[#d7dadb] dark:border-gray-700 rounded-xl overflow-hidden mb-4 last:mb-0"
+                className="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden mb-4 last:mb-0"
               >
                 <AccordionTrigger className="w-full p-5 text-left">
                   <div className="flex items-center gap-4">
@@ -61,15 +61,15 @@ export default function PortalServices() {
                       <span className="text-xs font-bold tracking-widest uppercase" style={{ color: colors.primary }}>
                         {svc.code}
                       </span>
-                      <h3 className="text-base font-semibold text-[#242727] dark:text-white">
+                      <h3 className="text-base font-semibold text-gray-900 dark:text-white">
                         {svc.name}
                       </h3>
                     </div>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-5 pb-5">
-                  <p className="text-sm text-[#555c5d] dark:text-gray-400 mb-1">{svc.desc}</p>
-                  <p className="text-sm text-[#555c5d] dark:text-gray-400 leading-relaxed whitespace-pre-line mb-4">{svc.detail}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{svc.desc}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed whitespace-pre-line mb-4">{svc.detail}</p>
                   <Link
                     href={svc.path}
                     className="text-sm font-medium hover:underline"

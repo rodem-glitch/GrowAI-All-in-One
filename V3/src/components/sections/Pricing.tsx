@@ -67,7 +67,7 @@ export default function Pricing() {
     <section className="py-24 px-6 bg-[#fbfbfb] dark:bg-gray-900">
       <div className="max-w-[1200px] mx-auto">
         {/* Section title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           {t.pricing.title}
         </h2>
 
@@ -76,8 +76,8 @@ export default function Pricing() {
           <span
             className={`text-sm font-medium ${
               !isAnnual
-                ? "text-[#242727] dark:text-white"
-                : "text-[#555c5d] dark:text-gray-400"
+                ? "text-gray-900 dark:text-white"
+                : "text-gray-500 dark:text-gray-400"
             }`}
           >
             {t.pricing.monthly}
@@ -95,8 +95,8 @@ export default function Pricing() {
           <span
             className={`text-sm font-medium ${
               isAnnual
-                ? "text-[#242727] dark:text-white"
-                : "text-[#555c5d] dark:text-gray-400"
+                ? "text-gray-900 dark:text-white"
+                : "text-gray-500 dark:text-gray-400"
             }`}
           >
             {t.pricing.annual}
@@ -123,8 +123,8 @@ export default function Pricing() {
                 key={translated.name}
                 className={`bg-white dark:bg-gray-800 rounded-2xl p-8 flex flex-col ${
                   plan.recommended
-                    ? "shadow-xl relative dark:border-gray-700"
-                    : "border border-[#d7dadb] dark:border-gray-700"
+                    ? "shadow-xl relative dark:border-gray-800"
+                    : "border border-gray-200 dark:border-gray-800"
                 }`}
                 style={
                   plan.recommended
@@ -145,20 +145,20 @@ export default function Pricing() {
                 )}
 
                 {/* Plan name */}
-                <p className="text-lg font-semibold text-[#242727] dark:text-white">
+                <p className="text-lg font-semibold text-gray-900 dark:text-white">
                   {translated.name}
                 </p>
 
                 {/* Price */}
-                <p className="text-4xl font-bold text-[#242727] dark:text-white mt-4">
+                <p className="text-4xl font-bold text-gray-900 dark:text-white mt-4">
                   {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                 </p>
-                <p className="text-sm text-[#555c5d] dark:text-gray-400">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   {t.pricing.perMonth}
                 </p>
 
                 {/* Description */}
-                <p className="text-sm text-[#555c5d] dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
                   {translated.desc}
                 </p>
 
@@ -182,7 +182,7 @@ export default function Pricing() {
                   {translated.features.map((feature: string) => (
                     <li key={feature} className="flex items-start gap-2">
                       <CheckIcon color={colors.primary} />
-                      <span className="text-sm text-[#555c5d] dark:text-gray-400">
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
                         {feature}
                       </span>
                     </li>

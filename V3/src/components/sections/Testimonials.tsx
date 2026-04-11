@@ -14,10 +14,10 @@ export default function Testimonials() {
   return (
     <section className="py-24 px-6 bg-[#fbfbfb] dark:bg-gray-900">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           {t.testimonials.title}
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4">
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4">
           {t.testimonials.subtitle}
         </p>
 
@@ -29,7 +29,7 @@ export default function Testimonials() {
             ) => (
               <Card
                 key={item.name}
-                className="rounded-2xl border-[#d7dadb] dark:border-gray-700 p-0"
+                className="rounded-2xl border-gray-200 dark:border-gray-800 p-0"
               >
                 <CardContent className="p-8">
                   <div className="flex gap-1">
@@ -59,10 +59,10 @@ export default function Testimonials() {
                       </span>
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-[#242727] dark:text-white">
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">
                         {item.name}
                       </p>
-                      <p className="text-xs text-[#555c5d] dark:text-gray-400">
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
                         {item.role}
                       </p>
                     </div>

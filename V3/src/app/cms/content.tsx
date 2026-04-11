@@ -1,15 +1,18 @@
 "use client";
 import SolutionPage from "@/components/solutions/SolutionPage";
 import { HardHat, Wifi, AlertTriangle, BarChart3, Box, Camera } from "lucide-react";
+import { CMS_SCENES } from "@/data/scripts/video-scenes";
 
 export default function CmsContent() {
   return (
     <SolutionPage
       code="CMS"
-      name="Construction Management"
+      name="Construction Management System"
       tagline="IoT + AI 기반 건설 현장 관리의 스마트화"
       subtitle={"센서 모니터링부터 안전 예측까지\n건설 현장의 디지털 전환을 실현합니다."}
       icon={HardHat}
+      scenes={CMS_SCENES}
+      videoSrc="/videos/cms.mp4"
       videoTitle="CMS 데모 영상"
       videoDesc="스마트 건설 현장 관리를 확인하세요"
       features={[
@@ -21,9 +24,9 @@ export default function CmsContent() {
         { icon: HardHat, title: "작업자 관리", desc: "출입 관리, 자격 확인, 안전 교육 이수 현황을 통합 관리합니다." },
       ]}
       screenshots={[
-        { title: "현장 대시보드", desc: "현장 전체 현황을 한눈에 파악합니다.", gradient: "from-amber-100 to-yellow-50" },
-        { title: "안전 모니터링", desc: "AI 안전 감지 결과를 실시간으로 확인합니다.", gradient: "from-red-100 to-rose-50" },
-        { title: "BIM 뷰어", desc: "3D BIM 모델 위에 실시간 데이터를 오버레이합니다.", gradient: "from-blue-100 to-cyan-50" },
+        { title: "현장 대시보드", desc: "현장 전체 현황을 한눈에 파악합니다.", mockup: "dashboard" },
+        { title: "안전 모니터링", desc: "AI 안전 감지 결과를 실시간으로 확인합니다.", mockup: "safety" },
+        { title: "BIM 뷰어", desc: "3D BIM 모델 위에 실시간 데이터를 오버레이합니다.", mockup: "bim" },
       ]}
       aiFeatures={[
         { title: "안전 사고 예측", desc: "기상, 작업 강도, 피로도 데이터를 종합하여 사고 위험을 사전에 예측합니다." },

@@ -3,7 +3,9 @@
 import SolutionPage from "@/components/solutions/SolutionPage";
 import PortalCREATOR from "@/components/portal/PortalCREATOR";
 import PortalFKDS from "@/components/portal/PortalFKDS";
-import { BookOpen, Sparkles, Route, Palette, Wand2, Brain, FileText } from "lucide-react";
+import { BookOpen, Sparkles, Route, Palette, Wand2, FileText } from "lucide-react";
+import ClaudeIcon from "@/components/icons/ClaudeIcon";
+import { LEARNFORM_SCENES } from "@/data/scripts/video-scenes";
 
 export default function LearnFormContent() {
   return (
@@ -14,6 +16,8 @@ export default function LearnFormContent() {
         tagline="CREATOR x FKDS 기반 AI 이러닝 콘텐츠 자동 생성"
         subtitle={"GPT-4o · Claude · Gemini 멀티 AI로\n교수설계부터 평가까지 자동화합니다."}
         icon={BookOpen}
+        scenes={LEARNFORM_SCENES}
+        videoSrc="/videos/learnform.mp4"
         videoTitle="LearnForm 데모 영상"
         videoDesc="3분 안에 이러닝 콘텐츠가 만들어지는 과정을 확인하세요"
         features={[
@@ -21,13 +25,13 @@ export default function LearnFormContent() {
           { icon: Route, title: "CREATOR 7단계 설계", desc: "Concept부터 Reflection까지 체계적인 교수설계 프레임워크를 AI가 자동으로 적용합니다." },
           { icon: Palette, title: "FKDS 학습 경험", desc: "Feeling→Knowing→Doing→Sharing 순환 모델로 몰입형 학습 경험을 설계합니다." },
           { icon: Wand2, title: "원클릭 LMS 연동", desc: "SCORM/xAPI 표준 지원으로 기존 LMS에 생성된 콘텐츠를 원클릭으로 배포합니다." },
-          { icon: Brain, title: "AI 자동 평가", desc: "학습 성과를 AI가 실시간으로 분석하고 맞춤형 피드백을 자동 생성합니다." },
+          { icon: ClaudeIcon, title: "AI 자동 평가", desc: "학습 성과를 AI가 실시간으로 분석하고 맞춤형 피드백을 자동 생성합니다." },
           { icon: FileText, title: "다국어 콘텐츠", desc: "20개 이상 언어로 콘텐츠를 자동 번역하여 글로벌 교육을 지원합니다." },
         ]}
         screenshots={[
-          { title: "콘텐츠 에디터", desc: "드래그 앤 드롭으로 이러닝 콘텐츠를 손쉽게 편집합니다.", gradient: "from-blue-100 to-cyan-50" },
-          { title: "학습 분석 대시보드", desc: "학습자 진도와 성과를 실시간으로 모니터링합니다.", gradient: "from-purple-100 to-pink-50" },
-          { title: "AI 생성 결과", desc: "멀티 AI가 자동 생성한 콘텐츠를 검토하고 승인합니다.", gradient: "from-green-100 to-emerald-50" },
+          { title: "콘텐츠 에디터", desc: "CREATOR 7단계 기반으로 AI가 텍스트, 영상, 퀴즈를 자동 생성합니다.", mockup: "lf-editor" },
+          { title: "학습 분석 대시보드", desc: "FKDS 단계별 학습 분포와 수강생 현황을 실시간으로 모니터링합니다.", mockup: "lf-dashboard" },
+          { title: "AI 생성 결과", desc: "멀티 AI가 생성한 학습 목표, 평가 문항, 영상을 검토하고 승인합니다.", mockup: "lf-ai-results" },
         ]}
         aiFeatures={[
           { title: "자동 교수설계", desc: "학습 목표를 입력하면 CREATOR 7단계에 따라 전체 커리큘럼을 자동으로 설계합니다." },

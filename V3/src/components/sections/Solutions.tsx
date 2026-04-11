@@ -16,10 +16,10 @@ export default function Solutions() {
   return (
     <section className="py-24 px-6 bg-[#fbfbfb] dark:bg-gray-900">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           {t.solutions.title}
         </h2>
-        <p className="text-lg text-[#555c5d] text-center mt-4 dark:text-gray-400">
+        <p className="text-lg text-gray-500 text-center mt-4 dark:text-gray-400">
           {t.solutions.subtitle}
         </p>
 
@@ -28,14 +28,14 @@ export default function Solutions() {
             (item: { title: string; desc: string }, i: number) => (
               <Card
                 key={item.title}
-                className="rounded-2xl overflow-hidden border-[#d7dadb] hover:shadow-xl transition-shadow dark:border-gray-700 p-0 gap-0"
+                className="rounded-2xl overflow-hidden border-gray-200 hover:shadow-xl transition-shadow dark:border-gray-800 p-0 gap-0"
               >
                 <div className={`h-56 ${gradients[i % gradients.length]}`} />
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-[#242727] dark:text-white">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="text-[#555c5d] mt-3 leading-relaxed dark:text-gray-400">
+                  <p className="text-gray-500 mt-3 leading-relaxed dark:text-gray-400">
                     {item.desc}
                   </p>
                   <a

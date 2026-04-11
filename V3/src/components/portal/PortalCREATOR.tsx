@@ -100,14 +100,14 @@ export default function PortalCREATOR() {
         <h2
           className={
             "text-4xl md:text-5xl font-bold " +
-            "text-center text-[#242727] dark:text-white"
+            "text-center text-gray-900 dark:text-white"
           }
         >
           CREATOR 7-Step Framework
         </h2>
         <p
           className={
-            "text-lg text-[#555c5d] dark:text-gray-400 " +
+            "text-lg text-gray-500 dark:text-gray-400 " +
             "text-center mt-4"
           }
         >
@@ -132,7 +132,7 @@ export default function PortalCREATOR() {
                 "transition-all duration-300 " +
                 (activeStep === i
                   ? "shadow-md"
-                  : "border-[#d7dadb] dark:border-gray-700 " +
+                  : "border-gray-200 dark:border-gray-800 " +
                     "hover:border-gray-300 " +
                     "dark:hover:border-gray-600")
               }
@@ -165,7 +165,7 @@ export default function PortalCREATOR() {
                   "leading-tight " +
                   (activeStep === i
                     ? ""
-                    : "text-[#555c5d] dark:text-gray-400")
+                    : "text-gray-500 dark:text-gray-400")
                 }
                 style={
                   activeStep === i
@@ -183,8 +183,8 @@ export default function PortalCREATOR() {
         <div
           className={
             "max-w-3xl mx-auto bg-white dark:bg-gray-800 " +
-            "rounded-2xl border border-[#d7dadb] " +
-            "dark:border-gray-700 p-8 md:p-12 shadow-sm"
+            "rounded-2xl border border-gray-200 " +
+            "dark:border-gray-800 p-8 md:p-12 shadow-sm"
           }
         >
           <div className="flex items-start gap-6">
@@ -214,7 +214,7 @@ export default function PortalCREATOR() {
                 <h3
                   className={
                     "text-2xl font-bold " +
-                    "text-[#242727] dark:text-white"
+                    "text-gray-900 dark:text-white"
                   }
                 >
                   {steps[activeStep].name}
@@ -222,7 +222,7 @@ export default function PortalCREATOR() {
               </div>
               <p
                 className={
-                  "text-[#555c5d] dark:text-gray-400 " +
+                  "text-gray-500 dark:text-gray-400 " +
                   "mb-3 whitespace-pre-line"
                 }
               >
@@ -230,7 +230,7 @@ export default function PortalCREATOR() {
               </p>
               <p
                 className={
-                  "text-sm text-[#555c5d] " +
+                  "text-sm text-gray-500 " +
                   "dark:text-gray-400 leading-relaxed"
                 }
               >

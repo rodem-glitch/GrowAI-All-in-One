@@ -5,7 +5,7 @@ import MapContent from "./content";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "MAP — Manufacturing AI Platform | GrowAI",
+  title: "MAP - Manufacturing AI Platform | GrowAI",
   description: "생산 공정의 지능화와 품질 최적화 AI 플랫폼",
 };
 

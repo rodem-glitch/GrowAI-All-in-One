@@ -5,7 +5,7 @@ import VasContent from "./content";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "VAS — Video Auto Summary | GrowAI",
+  title: "VAS - Video Auto Summary | GrowAI",
   description: "AI 기반 영상 자동 요약으로 학습 효율 극대화",
 };
 

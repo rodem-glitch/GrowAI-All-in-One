@@ -17,7 +17,7 @@ export default function PortalTrustedBy() {
   return (
     <section className="py-16 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <p className="text-sm uppercase tracking-widest text-[#555c5d] dark:text-gray-500 font-medium text-center mb-10">
+        <p className="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-500 font-medium text-center mb-10">
           Trusted by Leading Organizations
         </p>
 
@@ -25,7 +25,7 @@ export default function PortalTrustedBy() {
           {partners.map((partner) => {
             const Icon = partner.icon;
             return (
-              <Card key={partner.name} className="rounded-2xl border-[#d7dadb] dark:border-gray-700 hover:shadow-lg transition-shadow p-0">
+              <Card key={partner.name} className="rounded-2xl border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow p-0">
                 <CardContent className="p-6 text-center">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
@@ -33,16 +33,16 @@ export default function PortalTrustedBy() {
                   >
                     <Icon className="w-6 h-6" style={{ color: colors.primary }} strokeWidth={1.8} />
                   </div>
-                  <h3 className="text-sm font-bold text-[#242727] dark:text-white">{partner.name}</h3>
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">{partner.name}</h3>
                   <p className="text-xs font-medium mt-0.5 mb-2" style={{ color: colors.primary }}>{partner.nameKo}</p>
-                  <p className="text-xs text-[#555c5d] dark:text-gray-400">{partner.desc}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{partner.desc}</p>
                 </CardContent>
               </Card>
             );
           })}
         </div>
 
-        <div className="mt-12 border-t border-[#d7dadb] dark:border-gray-700" />
+        <div className="mt-12 border-t border-gray-200 dark:border-gray-800" />
       </div>
     </section>
   );

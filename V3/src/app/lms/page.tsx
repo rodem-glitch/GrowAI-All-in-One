@@ -5,7 +5,7 @@ import LmsContent from "./content";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "LMS — Learning Management System | GrowAI",
+  title: "LMS - Learning Management System | GrowAI",
   description: "체계적인 학습 관리와 진도 추적 시스템",
 };
 

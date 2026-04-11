@@ -1,6 +1,7 @@
 "use client";
 import SolutionPage from "@/components/solutions/SolutionPage";
 import { FileVideo, FileSearch, Captions, Tag, Clock, Languages } from "lucide-react";
+import { VAS_SCENES } from "@/data/scripts/video-scenes";
 
 export default function VasContent() {
   return (
@@ -10,6 +11,8 @@ export default function VasContent() {
       tagline="AI 기반 영상 자동 요약"
       subtitle={"수천 시간의 영상을 AI가 분석하여\n핵심만 빠르게 파악합니다."}
       icon={FileVideo}
+      scenes={VAS_SCENES}
+      videoSrc="/videos/vas.mp4"
       videoTitle="VAS 데모 영상"
       videoDesc="영상 자동 요약이 작동하는 과정을 확인하세요"
       features={[
@@ -21,9 +24,9 @@ export default function VasContent() {
         { icon: FileVideo, title: "하이라이트 클립", desc: "중요 장면을 자동으로 클립으로 만들어 공유합니다." },
       ]}
       screenshots={[
-        { title: "요약 대시보드", desc: "영상별 요약 결과를 한눈에 확인합니다.", gradient: "from-pink-100 to-rose-50" },
-        { title: "챕터 뷰어", desc: "자동 분할된 챕터를 탐색합니다.", gradient: "from-cyan-100 to-sky-50" },
-        { title: "키워드 검색", desc: "영상 내 키워드를 검색하여 해당 구간으로 이동합니다.", gradient: "from-amber-100 to-yellow-50" },
+        { title: "요약 대시보드", desc: "영상별 요약 결과를 한눈에 확인합니다.", mockup: "dashboard" },
+        { title: "챕터 뷰어", desc: "자동 분할된 챕터를 탐색합니다.", mockup: "timeline" },
+        { title: "키워드 검색", desc: "영상 내 키워드를 검색하여 해당 구간으로 이동합니다.", mockup: "search" },
       ]}
       aiFeatures={[
         { title: "멀티모달 분석", desc: "음성, 텍스트, 화면 변화를 동시에 분석하여 정확한 요약을 생성합니다." },

@@ -9,10 +9,10 @@ export default function Showcase() {
   return (
     <section className="py-24 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
           {t.showcase.title}
         </h2>
-        <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4">
+        <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4">
           {t.showcase.subtitle}
         </p>
 
@@ -57,8 +57,8 @@ export default function Showcase() {
         <div className="flex justify-center gap-12 md:gap-20 mt-12">
           {t.showcase.stats.map(({ number, label }, i) => (
             <div key={i} className="flex flex-col items-center">
-              <span className="text-3xl font-bold text-[#242727] dark:text-white">{number}</span>
-              <span className="text-sm text-[#555c5d] dark:text-gray-400 mt-1">{label}</span>
+              <span className="text-3xl font-bold text-gray-900 dark:text-white">{number}</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400 mt-1">{label}</span>
             </div>
           ))}
         </div>

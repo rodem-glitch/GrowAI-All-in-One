@@ -1,6 +1,7 @@
 "use client";
 import SolutionPage from "@/components/solutions/SolutionPage";
 import { Video, Captions, Users, MonitorPlay, Mic, HardDrive } from "lucide-react";
+import { VLS_SCENES } from "@/data/scripts/video-scenes";
 
 export default function VlsContent() {
   return (
@@ -10,6 +11,8 @@ export default function VlsContent() {
       tagline="시공간 제약 없는 실시간 화상 교육"
       subtitle={"HD/4K 라이브 스트리밍부터 AI 자막까지\n어디서든 최고의 교육을 경험합니다."}
       icon={Video}
+      scenes={VLS_SCENES}
+      videoSrc="/videos/vls.mp4"
       videoTitle="VLS 데모 영상"
       videoDesc="실시간 화상 교육의 새로운 경험을 확인하세요"
       features={[
@@ -21,9 +24,9 @@ export default function VlsContent() {
         { icon: Video, title: "화면 공유 & 화이트보드", desc: "화면 공유, 실시간 화이트보드, 폴링 등 인터랙티브 도구를 제공합니다." },
       ]}
       screenshots={[
-        { title: "라이브 강의실", desc: "실시간 강의 진행 화면과 참여자 목록입니다.", gradient: "from-orange-100 to-amber-50" },
-        { title: "AI 자막 패널", desc: "실시간으로 생성되는 다국어 자막 화면입니다.", gradient: "from-blue-100 to-sky-50" },
-        { title: "녹화 관리", desc: "지난 강의 녹화를 검색하고 재생합니다.", gradient: "from-purple-100 to-violet-50" },
+        { title: "라이브 강의실", desc: "실시간 강의 진행 화면과 참여자 목록입니다.", mockup: "video" },
+        { title: "AI 자막 패널", desc: "실시간으로 생성되는 다국어 자막 화면입니다.", mockup: "subtitle" },
+        { title: "녹화 관리", desc: "지난 강의 녹화를 검색하고 재생합니다.", mockup: "search" },
       ]}
       aiFeatures={[
         { title: "실시간 다국어 자막", desc: "강사의 음성을 AI가 실시간으로 인식하여 20개 이상 언어로 자막을 생성합니다." },

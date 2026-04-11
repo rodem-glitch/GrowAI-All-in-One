@@ -5,7 +5,7 @@ import CmsContent from "./content";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "CMS — Construction Management System | GrowAI",
+  title: "CMS - Construction Management System | GrowAI",
   description: "IoT + AI 기반 건설 현장 관리의 스마트화",
 };
 

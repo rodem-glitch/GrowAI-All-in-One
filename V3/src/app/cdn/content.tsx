@@ -1,6 +1,7 @@
 "use client";
 import SolutionPage from "@/components/solutions/SolutionPage";
 import { Globe, Gauge, Shield, BarChart3, Zap, Server } from "lucide-react";
+import { CDN_SCENES } from "@/data/scripts/video-scenes";
 
 export default function CdnContent() {
   return (
@@ -10,6 +11,8 @@ export default function CdnContent() {
       tagline="글로벌 엣지 캐싱으로 끊김 없는 미디어 경험"
       subtitle={"42개국 엣지 서버로 초저지연 콘텐츠 전송.\n어디서든 빠르고 안전한 미디어 경험."}
       icon={Globe}
+      scenes={CDN_SCENES}
+      videoSrc="/videos/cdn.mp4"
       videoTitle="CDN 데모 영상"
       videoDesc="글로벌 콘텐츠 전송의 속도를 체감하세요"
       features={[
@@ -21,9 +24,9 @@ export default function CdnContent() {
         { icon: Globe, title: "멀티 CDN 전략", desc: "복수 CDN을 자동으로 전환하여 가용성 99.99%를 보장합니다." },
       ]}
       screenshots={[
-        { title: "글로벌 트래픽 맵", desc: "전 세계 엣지 서버의 트래픽을 실시간으로 시각화합니다.", gradient: "from-teal-100 to-green-50" },
-        { title: "성능 모니터링", desc: "응답 시간, 캐시 히트율 등 핵심 지표를 추적합니다.", gradient: "from-blue-100 to-indigo-50" },
-        { title: "보안 대시보드", desc: "DDoS 방어, SSL 인증서 관리 현황을 확인합니다.", gradient: "from-red-100 to-orange-50" },
+        { title: "글로벌 트래픽 맵", desc: "전 세계 엣지 서버의 트래픽을 실시간으로 시각화합니다.", mockup: "globe" },
+        { title: "성능 모니터링", desc: "응답 시간, 캐시 히트율 등 핵심 지표를 추적합니다.", mockup: "analytics" },
+        { title: "보안 대시보드", desc: "DDoS 방어, SSL 인증서 관리 현황을 확인합니다.", mockup: "safety" },
       ]}
       aiFeatures={[
         { title: "AI 트래픽 예측", desc: "과거 패턴을 학습하여 트래픽 급증을 사전에 예측하고 리소스를 자동 확장합니다." },

@@ -3,7 +3,11 @@
 import { useTheme } from "@/contexts/ThemeContext";
 import { Card, CardContent } from "@/components/ui/card";
 import type { LucideIcon } from "lucide-react";
-import { Play, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import VideoPlayer from "@/components/ui/VideoPlayer";
+import type { VideoPlayerProps } from "@/components/ui/VideoPlayer";
+import MockupIllustration from "@/components/ui/MockupIllustration";
+import type { MockupType } from "@/components/ui/MockupIllustration";
 
 export interface SolutionFeature {
   icon: LucideIcon;
@@ -14,7 +18,7 @@ export interface SolutionFeature {
 export interface SolutionScreenshot {
   title: string;
   desc: string;
-  gradient: string;
+  mockup: MockupType;
 }
 
 export interface SolutionAI {
@@ -33,6 +37,8 @@ export interface SolutionPageProps {
   features: SolutionFeature[];
   screenshots: SolutionScreenshot[];
   aiFeatures: SolutionAI[];
+  scenes: VideoPlayerProps["scenes"];
+  videoSrc?: string;
   ctaText: string;
 }
 
@@ -47,6 +53,8 @@ export default function SolutionPage({
   features,
   screenshots,
   aiFeatures,
+  scenes,
+  videoSrc,
   ctaText,
 }: SolutionPageProps) {
   const { colors } = useTheme();
@@ -76,13 +84,13 @@ export default function SolutionPage({
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#242727] dark:text-white leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
             {name}
           </h1>
           <p className="text-xl md:text-2xl font-medium mt-4" style={{ color: colors.primary }}>
             {tagline}
           </p>
-          <p className="text-lg text-[#555c5d] dark:text-gray-400 mt-4 max-w-2xl mx-auto whitespace-pre-line">
+          <p className="text-lg text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto whitespace-pre-line">
             {subtitle}
           </p>
 
@@ -111,32 +119,13 @@ export default function SolutionPage({
             </a>
           </div>
 
-          {/* Video placeholder */}
-          <div
-            id="demo"
-            className="mt-16 rounded-2xl aspect-video max-w-4xl mx-auto relative overflow-hidden flex items-center justify-center"
-            style={{
-              backgroundImage: `linear-gradient(135deg, ${colors.primary}25, ${colors.primaryDark}15)`,
-            }}
-          >
-            <div className="text-center">
-              <button
-                aria-label="Play demo"
-                className="w-20 h-20 rounded-full bg-white/80 dark:bg-white/60 flex items-center justify-center shadow-lg hover:bg-white transition-colors mx-auto mb-4"
-              >
-                <Play
-                  className="w-8 h-8 translate-x-0.5"
-                  style={{ color: colors.primary }}
-                  fill={colors.primary}
-                />
-              </button>
-              <p className="text-lg font-semibold text-[#242727] dark:text-white">
-                {videoTitle}
-              </p>
-              <p className="text-sm text-[#555c5d] dark:text-gray-400 mt-1">
-                {videoDesc}
-              </p>
-            </div>
+          {/* Video - 공통 규격: max-w-5xl, aspect-video, rounded-2xl, shadow-2xl */}
+          <div id="demo" className="mt-16">
+            <VideoPlayer
+              scenes={scenes}
+              videoSrc={videoSrc}
+              sceneDuration={4000}
+            />
           </div>
         </div>
       </section>
@@ -153,10 +142,10 @@ export default function SolutionPage({
           >
             Features
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
             핵심 기능
           </h2>
-          <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4">
+          <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4">
             {code}의 대표 기능을 소개합니다
           </p>
 
@@ -166,7 +155,7 @@ export default function SolutionPage({
               return (
                 <Card
                   key={feat.title}
-                  className="rounded-2xl border-[#d7dadb] dark:border-gray-700 hover:shadow-lg transition-shadow p-0"
+                  className="rounded-2xl border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow p-0"
                 >
                   <CardContent className="p-8">
                     <div
@@ -179,10 +168,10 @@ export default function SolutionPage({
                         strokeWidth={1.5}
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-[#242727] dark:text-white mb-2">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                       {feat.title}
                     </h3>
-                    <p className="text-sm text-[#555c5d] dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                       {feat.desc}
                     </p>
                   </CardContent>
@@ -202,23 +191,23 @@ export default function SolutionPage({
           >
             Screenshots
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
             화면 미리보기
           </h2>
-          <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4">
+          <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4">
             실제 {code} 화면을 확인하세요
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             {screenshots.map((ss) => (
               <div key={ss.title}>
-                <div
-                  className={`h-56 rounded-2xl bg-gradient-to-br ${ss.gradient} dark:opacity-80 mb-6`}
-                />
-                <h3 className="text-lg font-semibold text-[#242727] dark:text-white">
+                <div className="mb-6">
+                  <MockupIllustration type={ss.mockup} title={ss.title} desc={ss.desc} />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {ss.title}
                 </h3>
-                <p className="text-sm text-[#555c5d] dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
                   {ss.desc}
                 </p>
               </div>
@@ -236,10 +225,10 @@ export default function SolutionPage({
           >
             AI Intelligence
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#242727] dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 dark:text-white">
             AI가 만드는 차이
           </h2>
-          <p className="text-lg text-[#555c5d] dark:text-gray-400 text-center mt-4">
+          <p className="text-lg text-gray-500 dark:text-gray-400 text-center mt-4">
             {code}에 내장된 AI가 업무를 혁신합니다
           </p>
 
@@ -247,7 +236,7 @@ export default function SolutionPage({
             {aiFeatures.map((ai) => (
               <div
                 key={ai.title}
-                className="flex items-start gap-4 bg-white dark:bg-gray-800 rounded-2xl border border-[#d7dadb] dark:border-gray-700 p-6"
+                className="flex items-start gap-4 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-800 p-6"
               >
                 <CheckCircle2
                   className="w-6 h-6 shrink-0 mt-0.5"
@@ -255,10 +244,10 @@ export default function SolutionPage({
                   strokeWidth={1.5}
                 />
                 <div>
-                  <h3 className="text-base font-semibold text-[#242727] dark:text-white mb-1">
+                  <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-1">
                     {ai.title}
                   </h3>
-                  <p className="text-sm text-[#555c5d] dark:text-gray-400 leading-relaxed">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                     {ai.desc}
                   </p>
                 </div>

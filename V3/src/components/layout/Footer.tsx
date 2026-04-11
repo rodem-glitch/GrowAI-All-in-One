@@ -1,5 +1,7 @@
 "use client";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PAGE_VISIBILITY } from "@/config/feature-flags";
 
 const columnHeadingClass =
   "text-sm font-semibold text-white uppercase tracking-wider mb-4";
@@ -12,23 +14,23 @@ export default function Footer() {
 
   const footerLinks = {
     product: [
-      { label: t.footer.productLinks[0], href: "#" },
-      { label: t.footer.productLinks[1], href: "#" },
-      { label: t.footer.productLinks[2], href: "#" },
-      { label: t.footer.productLinks[3], href: "#" },
-    ],
+      PAGE_VISIBILITY.pricing && { label: t.footer.productLinks[0], href: "/pricing" },
+      { label: t.footer.productLinks[1], href: "/download" },
+      { label: t.footer.productLinks[2], href: "/data-protection" },
+      { label: t.footer.productLinks[3], href: "/whats-new" },
+    ].filter(Boolean) as { label: string; href: string }[],
     resources: [
-      { label: t.footer.resourceLinks[0], href: "#" },
-      { label: t.footer.resourceLinks[1], href: "#" },
-      { label: t.footer.resourceLinks[2], href: "#" },
-      { label: t.footer.resourceLinks[3], href: "#" },
+      { label: t.footer.resourceLinks[0], href: "/community" },
+      { label: t.footer.resourceLinks[1], href: "/discord" },
+      { label: t.footer.resourceLinks[2], href: "/help-center" },
+      { label: t.footer.resourceLinks[3], href: "/blog" },
     ],
     company: [
-      { label: t.footer.companyLinks[0], href: "#" },
-      { label: t.footer.companyLinks[1], href: "#" },
-      { label: t.footer.companyLinks[2], href: "#" },
-      { label: t.footer.companyLinks[3], href: "#" },
-      { label: t.footer.companyLinks[4], href: "#" },
+      { label: t.footer.companyLinks[0], href: "/about" },
+      { label: t.footer.companyLinks[1], href: "/careers" },
+      { label: t.footer.companyLinks[2], href: "/terms" },
+      { label: t.footer.companyLinks[3], href: "/privacy-policy" },
+      { label: t.footer.companyLinks[4], href: "/refund" },
     ],
   };
 
@@ -46,17 +48,13 @@ export default function Footer() {
                     <stop offset="0%" stopColor="#0c2d48" />
                     <stop offset="100%" stopColor="#1a5276" />
                   </linearGradient>
-                  <radialGradient id="fHighlight" cx="75%" cy="25%" r="40%">
-                    <stop offset="0%" stopColor="white" stopOpacity="0.18" />
-                    <stop offset="100%" stopColor="white" stopOpacity="0" />
-                  </radialGradient>
                 </defs>
-                <rect width="34" height="34" rx="8" fill="url(#fLogoBg)" />
-                <path d="M30 2Q23 9 13 19Q5 27 3 33Q16 25 25 14Q31 7 30 2Z" fill="white" fillOpacity="0.85" />
-                <path d="M30 2Q17 17 3 33" stroke="white" strokeWidth="0.9" strokeOpacity="0.4" strokeLinecap="round" fill="none" />
-                <rect width="34" height="34" rx="8" fill="url(#fHighlight)" />
+                <rect width="34" height="34" rx="10" fill="url(#fLogoBg)" />
+                <text x="17" y="25" textAnchor="middle" fill="white" fontSize="24" fontFamily="'Times New Roman', Georgia, serif" fontWeight="400">&#937;</text>
               </svg>
-              GrowAI
+              <span style={{ fontFamily: "'Inter', system-ui, sans-serif", fontWeight: 700, letterSpacing: "-0.02em" }}>
+                GrowAI
+              </span>
             </span>
             <p className="text-sm text-gray-400">{t.footer.tagline}</p>
             <a
@@ -73,9 +71,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className={linkClass}>
+                  <Link href={link.href} className={linkClass}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,9 +85,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className={linkClass}>
+                  <Link href={link.href} className={linkClass}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -101,9 +99,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className={linkClass}>
+                  <Link href={link.href} className={linkClass}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
