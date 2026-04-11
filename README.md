@@ -95,6 +95,38 @@ CourseCard, CourseGrid, LearningPathCard, RatingStars, ActivityFeed, DiscussionC
 - **Primary Color**: `#14a1c8` (Teal)
 - **Font**: Pretendard + Inter
 
+## 개발 방법론: gstack
+
+> Source: [https://github.com/garrytan/gstack](https://github.com/garrytan/gstack) | MIT License
+> By Garry Tan, Y Combinator CEO | v0.16.2
+
+gstack은 Claude Code를 가상 엔지니어링 팀(23개 전문가 역할)으로 변환하는 오픈소스 소프트웨어 팩토리입니다.
+
+### Sprint Process
+```
+Think → Plan → Build → Review → Test → Ship → Reflect
+```
+
+| 명령어 | 역할 | 설명 |
+|--------|------|------|
+| `/office-hours` | YC Office Hours | 제품 기획, 6가지 핵심 질문 |
+| `/plan-ceo-review` | CEO | 전략 검토, 4가지 스코프 모드 |
+| `/plan-eng-review` | Eng Manager | 아키텍처, 데이터 흐름, 테스트 |
+| `/plan-design-review` | Designer | AI Slop 감지, 디자인 품질 |
+| `/autoplan` | Pipeline | CEO → Design → Eng 자동 리뷰 |
+| `/review` | Staff Engineer | 프로덕션 버그 탐지, 자동 수정 |
+| `/qa` | QA Lead | 실제 브라우저 테스트, 버그 수정 |
+| `/cso` | Security Officer | OWASP Top 10 + STRIDE 보안 감사 |
+| `/benchmark` | Performance | Core Web Vitals 성능 측정 |
+| `/ship` | Release Engineer | PR 생성 + 테스트 + 배포 |
+| `/retro` | Eng Manager | 주간 회고, 팀 성과 분석 |
+
+### 설치
+```bash
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
+cd ~/.claude/skills/gstack && ./setup
+```
+
 ## 프로젝트 구조
 
 ```

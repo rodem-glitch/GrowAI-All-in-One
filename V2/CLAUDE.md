@@ -29,15 +29,35 @@ F(Feeling) → K(Knowing) → D(Doing) → S(Sharing) Cycle
 - Line limit: 100 characters
 - Korean comments for complex logic
 
-## gstack Skills
-Use gstack skills for all development workflow:
-- /office-hours for product planning
-- /plan-ceo-review for strategic review
-- /review for code review
-- /qa for browser testing
-- /ship for PR and deployment
-- /cso for security audit
-- /retro for retrospective
+## gstack 개발 방법론
+Source: https://github.com/garrytan/gstack (MIT License)
+Version: v0.16.2 | by Garry Tan, Y Combinator CEO
+
+gstack은 Claude Code를 가상 엔지니어링 팀으로 변환하는 오픈소스 소프트웨어 팩토리입니다.
+23개 전문가 역할 + 8개 파워 도구를 slash 명령어로 제공합니다.
+
+### Sprint Process: Think → Plan → Build → Review → Test → Ship → Reflect
+
+| 단계 | 명령어 | 역할 |
+|------|--------|------|
+| Think | /office-hours | YC Office Hours 스타일 제품 기획 (6가지 핵심 질문) |
+| Plan | /plan-ceo-review | CEO 관점 전략 검토 (4가지 스코프 모드) |
+| Plan | /plan-eng-review | 엔지니어링 아키텍처 검토 |
+| Plan | /plan-design-review | 디자인 검토 (AI Slop 감지) |
+| Plan | /autoplan | CEO → Design → Eng 자동 리뷰 파이프라인 |
+| Build | (구현) | Next.js 16+ / Go / FastAPI 개발 |
+| Review | /review | Staff Engineer 수준 코드 리뷰 |
+| Test | /qa | 실제 브라우저 QA 테스트 |
+| Test | /cso | OWASP Top 10 + STRIDE 보안 감사 |
+| Test | /benchmark | Core Web Vitals 성능 측정 |
+| Ship | /ship | PR 생성 + 테스트 + 배포 |
+| Ship | /land-and-deploy | PR 머지 → CI → 프로덕션 배포 |
+| Reflect | /retro | 팀 회고 (주간/프로젝트별) |
+
+### Safety
+- /careful: 파괴적 명령어 경고
+- /freeze: 편집 범위 잠금
+- /guard: careful + freeze 동시 활성화
 
 ## CI/CD
 - Lighthouse score gate: 90+

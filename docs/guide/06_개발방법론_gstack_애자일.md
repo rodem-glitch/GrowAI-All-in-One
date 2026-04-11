@@ -2,6 +2,8 @@
 
 > **gstack과 Agentic AI를 결합한 초고속 소프트웨어 개발 방법론**
 > NEWKL GrowAI 팀의 실전 워크플로우 가이드
+>
+> Source: https://github.com/garrytan/gstack
 
 ---
 
@@ -533,14 +535,9 @@ export ANTHROPIC_API_KEY="your-api-key"
 ### 6.2 gstack 설치
 
 ```bash
-# gstack 저장소 클론
-git clone https://github.com/garrytan/gstack.git
-
-# gstack 디렉토리로 이동
-cd gstack
-
-# 설치 스크립트 실행 (CLAUDE.md에 gstack 설정 추가)
-./install.sh
+# gstack 공식 설치 (https://github.com/garrytan/gstack)
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
+cd ~/.claude/skills/gstack && ./setup
 ```
 
 또는 수동으로 프로젝트의 `CLAUDE.md`에 gstack 내용을 추가할 수 있습니다.

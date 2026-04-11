@@ -17,3 +17,4 @@ GrowAI All-in-One 통합 플랫폼이 /home/desktop/GrowAI-ALL-ONE 에 구축됨
 - TLA 서비스 8개: MAP, LMS, VLS, VAS, CCB, CCS, CDN, CMS
 - 문서 7개: docs/ 디렉토리 (통합전략, 라우팅, UI, TLA, CI, 배포, 구조)
 - 인프라: Docker 3-stage, Nginx, docker-compose (frontend+API+PostgreSQL+Redis)
+- gstack (https://github.com/garrytan/gstack) v0.16.2 개발 방법론 적용

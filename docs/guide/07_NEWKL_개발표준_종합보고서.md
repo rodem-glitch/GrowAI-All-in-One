@@ -28,7 +28,7 @@ NEWKL 주식회사는 AI 영상 생성 기술을 핵심 역량으로, 교육 콘
 
 - **Next.js 16+ Streaming UI**: 서버 컴포넌트 + 스트리밍 렌더링으로 초고속 사용자 경험
 - **Agentic AI Architecture**: LangGraph 기반 자율 에이전트가 콘텐츠 생성 전 과정을 오케스트레이션
-- **gstack CLI**: 10~15개 병렬 스프린트를 단일 개발자가 관리하는 혁신적 워크플로우
+- **gstack CLI** (by Garry Tan, Y Combinator CEO): 10~15개 병렬 스프린트를 단일 개발자가 관리하는 혁신적 워크플로우 (Source: https://github.com/garrytan/gstack)
 
 ### 투자 효과
 
@@ -247,8 +247,12 @@ Cloud Run: Next.js (RSC + Streaming)
 
 ### 4.1 gstack 기반 애자일 스프린트
 
-gstack은 NEWKL이 채택한 AI 시대의 개발 방법론 CLI 도구입니다.
+gstack은 Garry Tan(Y Combinator CEO)이 만든 AI 시대의 개발 방법론 CLI 도구로, NEWKL이 표준으로 채택하였습니다.
 1인 개발자가 10~15개의 병렬 스프린트를 효율적으로 관리할 수 있게 설계되었습니다.
+
+> **Source**: https://github.com/garrytan/gstack
+>
+> **설치**: `npm install -g gstack` (https://github.com/garrytan/gstack 참조)
 
 ### 4.2 스프린트 사이클: 7단계
 
@@ -824,7 +828,7 @@ ROI: 1년차 기준 투자 대비 5배 이상 회수 예상
 |------|------|
 | **CREATOR** | NEWKL 교육 설계 7단계 모델 (Concept → Route → Experience → Artifact → Transform → Operate → Reflect) |
 | **FKDS** | 학습 경험 순환 모델 (Feeling → Knowing → Doing → Sharing) |
-| **gstack** | NEWKL이 채택한 AI 시대 개발 워크플로우 CLI 도구 |
+| **gstack** | AI 시대 개발 워크플로우 CLI 도구 by Garry Tan, Y Combinator CEO (https://github.com/garrytan/gstack) |
 | **GrowAI** | NEWKL의 AI 기반 교육 콘텐츠 자동 생성 플랫폼 |
 | **Human-in-the-Loop** | AI 생성 결과를 사람이 검토/승인하는 프로세스 |
 | **LangGraph** | LangChain 기반 에이전트 오케스트레이션 프레임워크 |

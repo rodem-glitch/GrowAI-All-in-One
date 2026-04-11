@@ -3,4 +3,4 @@
 - [em dash 사용 금지](feedback_no_em_dash.md) - 텍스트에 " — " 문자 사용 금지
 - [GrowAI All-in-One 통합 플랫폼](project_growai_all_in_one.md) - 9개 서비스 통합, /home/desktop/GrowAI-ALL-ONE
 - [LearnForm V2 현황](project_learnform_v2.md) - 랜딩 UI, 월계수 잎 로고, 브랜딩 결정
-- [GitHub 저장소 목록](reference_github_repos.md) - LearnForm, GrowAI-All-in-One 저장소 경로
+- [GitHub 저장소 목록](reference_github_repos.md) - LearnForm, GrowAI-All-in-One, gstack 저장소 경로
